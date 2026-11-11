@@ -4,16 +4,19 @@ A two-player Tic-Tac-Toe game built with plain HTML, CSS, and JavaScript. Play l
 
 ## Features
 
-- 3×3 board with alternating X and O turns
+- Selectable 3×3, 4×4, and 5×5 boards with alternating X and O turns
 - Editable names for both players
 - Win detection for all rows, columns, and diagonals
 - Winner message, highlighted winning cells, and a short confetti celebration
 - Draw detection when the board fills without a winner
 - Scoreboard and round counter; restarting clears the board but keeps scores
+- Game progress, scores, round number, and player names restored after a page refresh
 - Responsive layout, keyboard focus indicators, and reduced-motion support
 - Light/dark theme toggle that remembers the selection in the browser
+- Algorithmic winning-line detection: match the board size (3, 4, or 5 in a row)
+- Draw state marked with a handshake (🤝)
 
-Scores and the current game are kept in page memory, so they reset when the page is reloaded. The theme preference is saved in local storage and remains after reload.
+Game progress, scores, player names, and the theme preference are saved in the browser's local storage and restored after a page reload. This data is local to the current browser and device; it is not shared across browsers or devices.
 
 ## Run locally
 
@@ -40,10 +43,12 @@ Then open `http://localhost:4002`.
 ## How to play
 
 1. Optionally enter names for Player 1 (X) and Player 2 (O).
-2. Select an empty square to place your mark. Players alternate turns.
-3. Get three marks in a row, column, or diagonal to win.
-4. Choose **Restart Game** to start another round. The scoreboard is kept until the page is reloaded.
-5. Use the theme button to switch between light and dark mode.
+2. Choose a 3×3, 4×4, or 5×5 board. Changing the board size starts a fresh round while keeping the scores.
+3. Select an empty square to place your mark. Players alternate turns.
+4. Get the number of marks matching the board size in a row (3, 4, or 5), horizontally, vertically, or diagonally.
+5. A tied full board is shown with a handshake (🤝).
+6. Choose **Restart Game** to start another round. Scores are kept between rounds and page reloads.
+7. Use the theme button to switch between light and dark mode.
 
 ## Project files
 
@@ -54,3 +59,6 @@ Then open `http://localhost:4002`.
 | `script.js` | Board state, turns, win/draw checks, scores, and theme behavior |
 | `index.js` | Small Node.js HTTP server for serving the app locally |
 
+## Saved data
+
+The browser stores the current board, whose turn it is, round result, player names, scores, and theme selection in local storage. Clearing the browser's site data removes this saved progress. The project does not send game data to a server or synchronize it across devices.

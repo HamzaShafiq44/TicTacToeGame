@@ -33,6 +33,15 @@
         </label>
       </div>
 
+      <label class="board-size-control" for="board-size">
+        Board size
+        <select id="board-size">
+          <option value="3">3 × 3 · 3 to win</option>
+          <option value="4">4 × 4 · 4 to win</option>
+          <option value="5">5 × 5 · 5 to win</option>
+        </select>
+      </label>
+
       <section class="scoreboard" aria-label="Score">
         <div class="score-card score-x">
           <span class="score-symbol" aria-hidden="true">X</span>
@@ -52,17 +61,7 @@
         <span class="status-message">Player 1's turn — let's play!</span>
       </p>
 
-      <div class="game-board" aria-label="Tic-Tac-Toe board">
-        <button class="cell" type="button" data-index="0" aria-label="Cell 1"></button>
-        <button class="cell" type="button" data-index="1" aria-label="Cell 2"></button>
-        <button class="cell" type="button" data-index="2" aria-label="Cell 3"></button>
-        <button class="cell" type="button" data-index="3" aria-label="Cell 4"></button>
-        <button class="cell" type="button" data-index="4" aria-label="Cell 5"></button>
-        <button class="cell" type="button" data-index="5" aria-label="Cell 6"></button>
-        <button class="cell" type="button" data-index="6" aria-label="Cell 7"></button>
-        <button class="cell" type="button" data-index="7" aria-label="Cell 8"></button>
-        <button class="cell" type="button" data-index="8" aria-label="Cell 9"></button>
-      </div>
+      <div class="game-board" aria-label="Tic-Tac-Toe board"></div>
 
       <button id="restart-button" class="restart-button" type="button">Restart Game</button>
       <p class="restart-hint">Your scores stay here for the next round.</p>
